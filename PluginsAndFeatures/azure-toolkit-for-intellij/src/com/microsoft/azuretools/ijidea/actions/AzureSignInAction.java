@@ -45,7 +45,11 @@ public class AzureSignInAction extends AzureAnAction {
     private static final String SIGN_OUT = "Azure Sign Out...";
 
     public AzureSignInAction() throws Exception {
-        super(AuthMethodManager.getInstance().isSignedIn() ? SIGN_OUT : SIGN_IN);
+        super();
+    }
+
+    public AzureSignInAction(boolean isSignIn) throws Exception {
+        super(isSignIn ? SIGN_OUT : SIGN_IN);
     }
 
     public AzureSignInAction(@Nullable String title) {

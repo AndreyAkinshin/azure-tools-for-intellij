@@ -380,7 +380,7 @@ public class ServerExplorerToolWindowFactory implements ToolWindowFactory, Prope
                                             ? RefreshableNode.REFRESH_ICON_DARK : RefreshableNode.REFRESH_ICON_LIGHT));
                                 }
                             },
-                            new AzureSignInAction(),
+                            new AzureSignInAction(AuthMethodManager.getInstance().isSignedIn()),
                             new SelectSubscriptionsAction());
                     } catch (Exception e) {
                         AzurePlugin.log(e.getMessage(), e);
